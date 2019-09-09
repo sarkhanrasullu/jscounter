@@ -8,7 +8,7 @@
         <div>Your Title Here</div>
         <div 
             id="campaign-counter" 
-            enddate="dd/mm/yyyy" <!-- if you prefer specific end date then only write this parameter and don't use begin, end parameters-->
+            enddate="mm/dd/yyyy" <!-- if you prefer specific end date then only write this parameter and don't use begin, end parameters-->
             begin="2" end="10" <!-- if you prefere specific begin and end days use begin, end params and don't use enddate. It will randomly find a day between these days and append it to today -->
             message="Left: ${day} days, ${hour} hours, ${minute} minutes, ${second} seconds"></div>
           </div>

@@ -6,9 +6,11 @@
               align-items: center;
               font-family: 'Niramit',sans-serif;">
     <div>Your Title Here</div>
-    <div id="campaign-counter"
-    begin="2"
-    end="10"
-    message="Left: ${day} days, ${hour} hours, ${minute} minutes, ${second} seconds"></div>
+    <div  id="campaign-counter"
+          enddate="09/13/2019"
+          begin="2"
+          end="10"
+          message="Left: ${day} days, ${hour} hours, ${minute} minutes, ${second} seconds"></div>
   </div>
+
   <script>var t_=new Date,c_=document.getElementById("campaign-counter"),eda_=c_.getAttribute("enddate"),bda_=c_.getAttribute("begin"),ea_=c_.getAttribute("end");if(null==eda_){eda_=new Date;var min=Math.ceil(bda_),max=Math.floor(ea_),n_=Math.floor(Math.random()*(max-min+1))+min;eda_.setDate(eda_.getDate()+n_)}var ed_=new Date(eda_),td_=t_.toLocaleDateString("en-GB"),ee_=ed_.toLocaleDateString("en-GB"),cdd_=ed_.getTime(),x=setInterval(function(){var e=(new Date).getTime(),t=cdd_-e,a=(a=Math.floor(t/864e5))<10?"0"+a:a,n=(n=Math.floor(t%864e5/36e5))<10?"0"+n:n,d=(d=Math.floor(t%36e5/6e4))<10?"0"+d:d,r=(r=Math.floor(t%6e4/1e3))<10?"0"+r:r,_=c_.getAttribute("message");_=_.replace("${day}",a).replace("${hour}",n).replace("${minute}",d).replace("${second}",r),c_.innerHTML="<div data-gnl='o' class='indbold'>"+_+"</div>",t<0&&(clearInterval(x),c_.innerHTML="BİTTİ")},1e3);</script>
