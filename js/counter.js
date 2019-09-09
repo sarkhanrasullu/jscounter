@@ -27,8 +27,12 @@ var ee_ = ed_.toLocaleDateString("en-GB");
         var hrs_ = hrs_ < 10 ? "0" + hrs_ : hrs_;
         var mts_ = mts_ < 10 ? "0" + mts_ : mts_;
         var sds_ = sds_ < 10 ? "0" + sds_ : sds_;
-
-        c_.innerHTML = "<div data-gnl='o' class='indbold'>Kalan Süre: " + dys_ + " Gün " + hrs_ + " Saat " + mts_ + " dakika " + sds_ + " saniye</div>";
+        var message =c_.getAttribute("message");
+        message=message.replace("${day}",dys_)
+                        .replace("${hour}",hrs_)
+                        .replace("${minute}",mts_)
+                        .replace("${second}",sds_);
+        c_.innerHTML = "<div data-gnl='o' class='indbold'>"+message+"</div>";
         if (ds_ < 0) {
             clearInterval(x);
             c_.innerHTML = "BİTTİ";
